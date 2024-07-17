@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BED World</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    
+
+        <nav class="nav">
+            <div class="container">
+                <div class="logo">
+                    <a href="#">BED WORLD</a>
+                </div>
+                <div id="mainListDiv" class="main_list">
+                    <ul class="navlinks">
+                        <li><a href="index.html"  class="actives"> <img  src="home.png" class="nav-icon">HOME</a></li>
+                        <li><a href="products.html"> <img  src="shop.png" class="nav-icon">PRODUCTS</a></li>
+                        <li><a href="about.html"><img src="info.png" class="nav-icon">ABOUT US</a></li>
+                        <li><a href="contact.html"> <img src="headset.png" class="nav-icon">CONTACT</a></li>
+                    </ul>
+                </div>
+                <span class="navTrigger">
+                    <i></i>
+                    <i></i>
+                    <i></i>
+                </span>
+            </div>
+        </nav>
+        <section class="home">
+            <div id="home-text" class="home-text">
+                <h1>The Mattress of Your Dreams</h1>
+                <p>Our signature hybrid mattress is designed for all body types and sleep positions. Experience the perfect blend of comfort and support.</p>
+                <div class="home-buttons">
+                    <a href="products.html" class="btn">Shop Now</a>
+                    <a href="about.html" class="btn">Learn More</a>
+                </div>
+        </section>
+        <section class="featured-products" id="products">
+            <h2>Featured Products</h2>
+            <div class="products">
+                <div class="product">
+                    <img src="https://dummyimage.com/300x200&text=product+image" alt="The Dreamer">
+                    <h3>The Dreamer</h3>
+                    <p>₹1,2000</p>
+                    
+                </div>
+                <div class="product">
+                    <img src="https://dummyimage.com/300x200&text=product+image" alt="The Sleeper">
+                    <h3>The Sleeper</h3>
+                    <p>₹1,4000</p>
+                    
+                </div>
+                <div class="product">
+                    <img src="https://dummyimage.com/300x200&text=product+image" alt="The Slumber">
+                    <h3>The Slumber</h3>
+                    <p>₹1,6000</p>
+                </div>
+                <div class="product">
+                    <img src="https://dummyimage.com/300x200&text=product+image" alt="The Snooze">
+                    <h3>The Snooze</h3>
+                    <p>₹1,8000</p>
+                </div>
+            </div>
+            <button class="view-more">View More</button>
+
+
+            <script>
+                document.addEventListener('scroll', function() {
+                    const fadeOutDiv = document.querySelector('.home-text');
+                    const scrollPosition = window.scrollY;
+                    const fadeStart = 100; // Scroll position to start fading out
+                    const fadeEnd = 300;   // Scroll position to completely fade out
+        
+                    if (scrollPosition >= fadeStart && scrollPosition <= fadeEnd) {
+                        let opacity = 1 - (scrollPosition - fadeStart) / (fadeEnd - fadeStart);
+                        fadeOutDiv.style.opacity = opacity;
+                    } else if (scrollPosition > fadeEnd) {
+                        fadeOutDiv.style.opacity = 0;
+                    } else {
+                        fadeOutDiv.style.opacity = 1;
+                    }
+                });
+            </script>
+
+
+        
+        
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script src="script.js"></script>
+    <!-- Function used to shrink nav bar removing paddings and adding black background -->
+    <script>
+        $(window).scroll(function() {
+            if ($(document).scrollTop() > 50) {
+                $('.nav').addClass('affix');
+                console.log("OK");
+            } else {
+                $('.nav').removeClass('affix');
+            }
+        });
+    </script>
+    <!-- hide the home text on click navTrigger -->
+    <script>
+    document.addEventListener('DOMContentLoaded', function() {
+        var navTrigger = document.querySelector('.navTrigger');
+        var homeText = document.getElementById('home-text');
+
+        navTrigger.addEventListener('click', function() {
+            if (homeText.style.display === 'none') {
+                homeText.style.display = 'block';
+            } else {
+                homeText.style.display = 'none';
+            }
+        });
+    });
+</script>
+</body>
+</html>
